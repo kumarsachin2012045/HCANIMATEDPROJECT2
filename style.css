@@ -1,0 +1,265 @@
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif ;
+}
+#page1{
+    width: 100%;
+    height: 100%;
+    /* background-color: aqua; */
+}
+#page1 #nav{
+    height: 60px;
+    width: 100%;
+    /* background-color: rgb(228, 165, 228); */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+#nav-part1{
+    width: 30%;
+    /* background-color: yellow; */
+    display: flex;
+    justify-content: space-between;
+
+}
+#nav-part1 h5{
+    font-weight: 500;
+
+}
+#nav img{
+    height: 90%;
+    width:100px;
+}
+#nav-part2{
+    width: 30%;
+    /* background-color: yellow; */
+    display:flex;
+    justify-content: flex-end;
+    
+}
+#nav-part2 button{
+    padding: 7px;
+    border-radius: 50px;
+    border: none;
+    background-color: black;
+    color: white;
+    margin-left: 10px; 
+    font-weight: 600;   
+}
+#nav-part2 button:nth-child(1){
+    color: black;
+    background-color: transparent;
+    position: relative;
+}
+#nav-part2 button:nth-child(1)::after{
+    content: "-";
+    
+    position: absolute;
+    left: 95%;
+}
+#conntet{
+    width: 100%;
+    height: calc(100% - 100px);
+    /* background-color: cadetblue; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+#conntet h5{
+    background-color: rgb(150, 237, 240);
+    padding: 4px;
+    font-weight: 400;
+    opacity: .8;
+    margin-bottom: 20px;
+    border-radius: 50px;
+}
+#conntet h3{
+    font-size: 35px;
+    font-weight: 500;
+   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+   margin-bottom: 20px;
+}
+#conntet h6{
+    font-weight: 500;
+    font-size: 8px;
+    padding:5px;
+    /* background-color: rgb(244, 244, 162); */
+    border-radius: 50px;
+}
+#conntet button{
+    margin-top: 13px;
+    font-weight: 600;
+    padding:5px;
+    background-color:black;
+    color: white;
+    font-size: 8px;
+    border-radius: 50px;
+    margin-bottom: 40px;
+}
+#bottom{
+    height: 245px;
+    width: 100%;
+    /* background-color: yellow; */
+    gap: 10px;
+    /* display: flex; */
+    /* flex-wrap: nowrap; */
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+.elem{
+    /* flex-shrink: 0; */
+    display: inline-block;
+    /* margin padding inline element par kam nhi karti h isliye inline block use kiya */
+    /* inline(margin padding kam nhi karti) block(block par kam karti h) 
+    isliye inline block use kiya kyo ki iss par inline aur block dono ki properties applay kar sakte ho */
+    /* iska use karne se element ek line me aa jate hai without shrink kiye */
+    /* aur ye jitna content hai utn hi space leta hai */
+    /* aur parrent par white space npwrap use karne se jo block nextline gya hoga 
+    wo ek hi line aa jayega scroallable form me */
+    /* ye kam display flex se bhi kar sakte ho wrap htane ke liye nowrap use kro aur jo compress hua use htane ke liye flex-shrink 0 kar do child me */
+    overflow: hidden;
+    height: 100%;
+    width: 200px;
+    background-color: rgb(234, 145, 21);
+    border-radius: 20px;
+    animation-name: move;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+#bottom::-webkit-scrollbar{
+    display: none;
+}
+
+.elem img{
+   height: 100%;
+   width: 100%;
+   object-fit: cover;
+   /* jab img tag lgate hai to object fit cover use karte hai 
+   aur jab background me image lgate hai background-size:cover use karte hai */
+   object-position: center;
+   overflow: hidden;
+   border-radius: 2lvh;
+}
+.elem video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    overflow: hidden;
+ 
+}
+@keyframes move {
+    from{
+        transform: translateX(0);
+    }to{
+        transform: translateX(-100%);
+    }
+}
+#page2{
+   min-height: 100%;
+    width: 100%;
+    /* background-color: beige; */
+    padding: 10px;
+}
+#page2 h1{
+     text-align: center;
+     /* color: green; */
+     font-weight: 500;
+     margin-bottom: 10px;
+}
+.block{
+    height: 280px;
+    width:395px;
+    margin-left: 12px;
+    background-color: rgb(87, 128, 251);
+    display: inline-block;
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+   
+}
+
+
+.box-btm{
+    height: 40%;
+    width: 100%;
+    background:linear-gradient(transparent,rgba(0, 0, 0, 0.925));
+    position: absolute;
+    bottom: -40%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 20px;
+    transition: all ease 0.4s;
+}
+.block:hover .box-btm{
+    bottom: 0px;
+}
+
+.box-btm i{
+    font-size:25px;
+    color: black;
+    background-color:white;
+    border-radius: 7px;
+}
+.block img{
+    height:100%;
+    width:100%;
+    object-fit: cover;
+    object-position: center;
+ 
+}
+.block video{
+    height:100%;
+    width:100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: ;
+ 
+}
+#page4{
+    height: 50%;
+    width: 100%;
+    background-color: beige;
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+.bottombox{
+    height:100%;
+    width: 100%;
+    /* background-color: rgb(233, 127, 127); */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:0px 25px;
+}
+.textbox{
+    height: 80%;
+    width: 30%;
+    background-color:rgb(251, 251, 245);
+    padding: 10px;
+}
+.textbox h2{
+     font-weight: 500;
+}
+.textbox h4{
+    font-weight: 400;
+
+}
+.textbox:hover{
+    box-shadow: 10px 10px 10px 5px rgba(0,0,0,0.5);
+    scale:1.1;
+}
